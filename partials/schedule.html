@@ -1,0 +1,21 @@
+<table>
+	<thead>
+		<tr>
+			<th>Team 1</th>
+			<th>Score</th>
+			<th>Team 2</th>
+			<th>Tijd</th>
+			<th>Datum</th>
+		</tr>
+	</thead>
+
+	<tr ng-repeat="game in schedule">	
+		
+			<td>{{game.team_1.name}}</td>
+			<td ng-click="showScore(game.game_id)">{{game.team_1_score}} - {{game.team_2_score}}</td>
+			<td>{{game.team_2.name}}</td>
+			<td>{{toTime(game.time)}}</td>
+			<td>{{toDate(game.time)}}</td>	
+		
+	</tr>
+</table>

@@ -1,0 +1,24 @@
+<h1>Score verloop</h1>
+<table>
+	<thead>
+		<tr>
+			<th>{{scores[0].team_1.name}}</th>
+			<th></th>
+			<th>{{scores[0].team_2.name}}</th>
+		</tr>
+	</thead>
+
+	<tr ng-repeat="score in scores">	
+		
+			<td>{{score.team_1_score}}</td>
+			<td></td>
+			<td>{{score.team_2_score}}</td>
+		
+	</tr>
+</table>
+<nav>
+	<ul>
+		<li><a href="#/addscore/{{matchID}}">score toevoegen</a></li>
+		<li><a href="">score aanpassen</a></li>
+	</ul>
+</nav>
