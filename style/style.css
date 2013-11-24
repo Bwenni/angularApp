@@ -1,0 +1,370 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	font-family:helvetica;
+	line-height: 1;
+	font-size: 16px;
+	-webkit-touch-callout: none;
+	
+}
+h2{
+	font-family: 'Graduate', cursive;
+	font-size: 120%;
+	font-weight: bold;
+}
+h1{
+	font-family: 'Graduate', cursive;
+	color:white;
+	font-size: 150%;
+}
+a{
+	text-decoration: none;
+	color:white;
+}
+header {
+	position:absolute;
+	top:0; left:0;
+	width:100%;
+	height:45px;
+	line-height:45px;
+	background: #f15024;
+	text-align:center;
+	border-bottom:2px solid #15236e;
+}
+
+footer {
+	position:absolute;
+	bottom:0; left:0;
+	width:100%;
+	height:48px;
+	background: #f15024;
+	padding:0;
+	border-top:2px solid #15236e;
+}
+
+nav ul li a{
+	display: block;
+	float: left;
+	width: 50%;
+	height: 48px;;
+	text-align: center;
+	line-height: 48px;
+}
+
+.active{
+   -moz-box-shadow:    inset 0px -4px #15236e;
+   -webkit-box-shadow: inset 0px -4px #15236e;
+   box-shadow:         inset 0px -4px #15236e;
+}
+
+#wrapper {
+	position:absolute; z-index:1;
+	top:46px; bottom:49px; left:0;
+	width:100%;
+	overflow:auto;
+}
+
+#scroller {
+	position:relative;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	width:100%;
+	padding:0;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.refresh{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.refresh span{
+	height: 50px;
+	line-height: 50px;
+	color:white;
+	background: #15236e;
+	border-radius: 15px;
+	padding: 10px 40px 10px 40px;
+}
+.pools h1{
+	background: #15236e;
+	line-height: 40px;
+	padding-left: 20px;
+	font-size: 120%;
+}
+.pools ul li{
+	line-height: 40px;
+	padding-left: 20px;
+	border-bottom: 1px solid #eee;
+	font-size: 120%;
+}
+
+.portrait{
+	display: none;
+}
+.pools thead{
+	text-align: left;	
+	color:#f15024;
+}
+
+.pools table{
+	font-size: 130%;	
+	width: 100%;
+}
+.pools table tr{
+	border-bottom: 1px solid #eee;
+}
+.pools table tr td,.pools table tr th{
+	margin: 1%;
+	padding: 1%;
+	height: 50px;
+	line-height: 50px;
+}
+
+.column{
+	width: 9%;
+	text-align: center;
+}
+
+.schedule{
+	width: 100%;
+}
+.thead{
+	display: block;
+	width:100%;
+	background: #15236e;
+	height: 40px;
+	line-height: 40px;
+}
+.thead li{
+	float:left;
+	width: 30%;
+	text-align: center;
+	font-size: 80%;
+}
+.schedulelist{
+	width:100%;	
+	border-style:inset;
+	border-bottom: 1px solid #eee;
+	font-size: 100%;
+	display: inline-block;
+	margin-top: 2%;
+	padding-bottom: 1%;
+}
+.schedulelist li{
+	float: left;
+	text-align: center;
+	
+}
+.team{
+	width:38%;
+}
+.score{
+	min-width:13%;
+	padding:0;
+}
+.time{
+	width: 36%;
+	margin: 1%;
+	color:#666;
+}
+
+.right-arrow{
+	position: absolute;
+	right:15px;
+	margin-top:8px;
+}
+.right-arrow img{
+	width: 25px;
+}
+
+.teampage{
+	display: block;
+	width: 100%;
+	min-height: 380px;
+}
+.teampage h1{
+	display: block;
+	text-align: center;
+	background:#15236e;;
+	height: 30px;
+	line-height: 30px;
+}
+.teampage h2{
+	text-align: center;
+	padding-top: 20px;
+}
+.teampage p{
+	text-align: center;
+}
+.teampage table{
+	width: 96%;
+	margin:2%;
+	text-align: center;
+}
+.teampage table th{
+	font-weight: bold;
+	font-size: 110%;
+}
+.teampage table td{
+	width: 33%;
+	padding-top: 3%;
+}
+.view-enter, 
+.view-leave
+{ 
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+} 
+ 
+.view-enter {
+    left: 100%;
+    width:100%;
+  position:absolute;
+}
+
+.view-enter.view-enter-active {
+    left: 0;
+}
+ 
+.view-leave {
+    right: 0;
+    position:absolute;
+
+  width:100%;
+}
+
+.view-leave.view-leave-active{
+    right: -100%;
+}
+.addscore{
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.addscore p{	
+	background: #15236e;
+	padding:10px 20% 10px 20%;
+	color:white;
+	display: inline;
+   border-radius: 15px;
+}
+.scores h1{
+	display: block;
+	text-align: center;
+	background:#15236e;
+	height: 30px;
+	line-height: 30px;
+}
+.scores{
+	width: 100%;
+}
+.scores table{
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+}
+.scores th{
+	width: 50%;
+}
+.inputcontainer{
+	width: 100%;
+}
+.team2{
+	text-align: center;
+	display: inline-block;
+	width: 34%;
+}
+.team1{
+	text-align: center;
+	width: 34%;
+	display: inline-block;
+}
+input[type=number]{
+	width: 10%;
+	display: inline-block;
+	height: 30px;
+	margin-top:40px;
+}
+
+.lastscore{
+	width: 100%;
+	text-align: center;
+}
+
+button{
+	width: 80%;
+	margin: 10px 10% 10px 10%;
+	background:#15236e;
+	color: white;
+	padding: 10px 0 10px 0;
+	border-radius: 10px;
+	font-size: 140%;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.example-show, .example-hide {
+  -webkit-transition:all linear 0.9s;
+  -moz-transition:all linear 0.9s;
+  -ms-transition:all linear 0.9s;
+  -o-transition:all linear 0.9s;
+  transition:all linear 0.9s;
+}
+ 
+.example-show {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+.example-show-active.example-show-active {
+  line-height:20px;
+  opacity:1;
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
