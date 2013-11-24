@@ -1,24 +1,27 @@
-<h1>Score verloop</h1>
-<table>
-	<thead>
-		<tr>
-			<th>{{scores[0].team_1.name}}</th>
-			<th></th>
-			<th>{{scores[0].team_2.name}}</th>
-		</tr>
-	</thead>
-
-	<tr ng-repeat="score in scores">	
-		
+<div class="refresh">
+    <span ng-click="refreshData()">Klik voor verversen...</span>
+</div>
+<section id="top" hm-dragright="showSchedule()" class="scores">
+	<h1>score verloop</h1>
+	<div class="addscore" ng-show="custom"><p ng-click="toggleCustom()">score toevoegen</p></div>
+	<div ng-hide="custom" ng-animate="{show: 'example-show'}" class="inputcontainer">
+		<h2 class="team1">{{scores[0].team_1.name}}</h2>
+		<input ng-model="team1score" type="number" min="0" required>
+		<input ng-model="team2score" type="number" min="0" required>
+		<h2 class="team2">{{scores[0].team_2.name}}</h2>
+		<div class="lastscore"><span>Laatste Score?</span><input type="checkbox" ng-model="isfinal" id="isfinal"></div>
+		<button ng-click="submitScore()">submit score</button>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th><h2>{{scores[0].team_1.name}}</h2></th>
+				<th><h2>{{scores[0].team_2.name}}</h2></th>
+			</tr>
+		</thead>
+		<tr ng-repeat="score in scores">	
 			<td>{{score.team_1_score}}</td>
-			<td></td>
 			<td>{{score.team_2_score}}</td>
-		
-	</tr>
-</table>
-<nav>
-	<ul>
-		<li><a href="#/addscore/{{matchID}}">score toevoegen</a></li>
-		<li><a href="">score aanpassen</a></li>
-	</ul>
-</nav>
+		</tr>
+	</table>
+</section>

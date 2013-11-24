@@ -1,38 +1,44 @@
 <!doctype html>
 <html lang="en" ng-app="scoreApp">
 <head>
-	<title>Amsterdam Ultimate</title>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css"/>
-
+    <title>Amsterdam Ultimate</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/ngProgress.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'> 
 </head>
-<body ng-controller="Main">
-
-	<header>
-		<i class="icon-reorder"></i>
-		<h1>{{header}}</h1>
-	</header>
-	<nav>
-		<ul>
-			<li><a href="#/pools">poule</a></li>
-			<li><a href="#/schedule">schema</a></li>
-		</ul>
-	</nav>
-	
-	<section ng-view>
-		
-	</section>
-
-	<script src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
-	<script src="lib/hammer.min.js"></script>
-	<script src="lib/gestures.min.js"></script>
-	<script src="lib/underscore-min.js"></script>
-
-	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
-
+<body ng-controller='MainController'>
+    <header>
+        <h1><a href="#/pools">amsterdam ultimate</a></h1>
+    </header>
+    <!-- Wrapper for the scroll library -->
+	<div id="wrapper" ng-iscroll='wrapper' ng-iscroll-form='true'>
+        <!-- ng-view is the template wonder, the animate lets the other pages animate in -->
+    	<div id="scroller" ng-view data-ng-animate="{enter: 'view-enter', leave: 'view-leave'}">
+            
+    	</div>
+    </div>
+    <footer>
+        <nav>
+            <ul>
+                <li><a ng-class="{active:isActive('/pools')}" href="#/pools">poules</a></li>
+                <li><a ng-class="{active:isActive('/schedule')}" href="#/schedule">schema</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
-</html>
+
+<!-- AngularJs -->
+<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.js'></script>
+
+<!-- Libraries -->
+<script type="text/javascript" src="lib/hammer.js"></script>
+<script type="text/javascript" src="lib/ngHammer.js"></script>
+<script type='text/javascript' src='http://rawgithub.com/cubiq/iscroll/v4/src/iscroll.js'></script>
+<script type="text/javascript" src="lib/ng-iscroll.js"></script>
+<script type="text/javascript" src="lib/ngProgress.js"></script>
+
+<!-- Application -->
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/services.js"></script>

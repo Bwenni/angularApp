@@ -1,23 +1,26 @@
-<h1>Teams</h1>
+<div class="refresh">
+    <span ng-click="refreshData()">Klik voor verversen...</span>
+</div>
+<section id="top" hm-dragright="showPool()" class="teampage">
+	<h1>teampagina</h1>
 
-<h1>{{team.name}}</h1>
-<p>Wins: {{team.wins}} - Losses: {{team.losses}}</p>
+	<h2>{{team_name}}</h2>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Team 1</th>
+				<th>Resultaat</th>
+				<th>Team 2</th>
+			</tr>
+		</thead>
 
-<table>
-	<thead>
-		<tr>
-			<th>Team 1</th>
-			<th>Resultaat</th>
-			<th>Team 2</th>
+		<tr ng-repeat="score in teams">
+
+			<td ng-click="showTeam(score.team_1.id)">{{score.team_1.name}}</td>
+			<td>{{score.team_1_score}} - {{score.team_2_score}}</td>
+			<td ng-click="showTeam(score.team_2.id)">{{score.team_2.name}}</td>
+
 		</tr>
-	</thead>
-
-	<tr ng-repeat="score in scores">
-
-		<td ng-click="showTeam(score.team_1.id)">{{score.team_1.name}}</td>
-		<td>{{score.team_1_score}} - {{score.team_2_score}}</td>
-		<td ng-click="showTeam(score.team_2.id)">{{score.team_2.name}}</td>
-
-	</tr>
-
-</table>
+	</table>
+</section>

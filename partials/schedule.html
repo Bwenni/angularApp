@@ -1,21 +1,20 @@
-<table>
-	<thead>
-		<tr>
-			<th>Team 1</th>
-			<th>Score</th>
-			<th>Team 2</th>
-			<th>Tijd</th>
-			<th>Datum</th>
-		</tr>
-	</thead>
+<div class="refresh">
+    <span ng-click="refreshData()">Klik voor verversen...</span>
+</div>
+<section id="top" hm-dragright="showPool()" class="schedule">
+	<ul class="thead">
+		<li><h1>team 1</h1></li>
+		<li><h1>score</h1></li>
+		<li><h1>team 2</h1></li>
+	</ul>
 
-	<tr ng-repeat="game in schedule">	
-		
-			<td>{{game.team_1.name}}</td>
-			<td ng-click="showScore(game.game_id)">{{game.team_1_score}} - {{game.team_2_score}}</td>
-			<td>{{game.team_2.name}}</td>
-			<td>{{toTime(game.time)}}</td>
-			<td>{{toDate(game.time)}}</td>	
-		
-	</tr>
-</table>
+	<ul class="schedulelist" ng-repeat="game in schedule | orderBy:['time']">
+		<li class="team">{{game.team_1.name}}</li>
+		<li class="score">{{game.team_1_score}} - {{game.team_2_score}}</li>
+		<li class="team">{{game.team_2.name}}</li>
+		<li class="time">tijd: {{toTime(game.start_time)}}</li>
+		<li class="score">&nbsp;</li>
+		<li class="time">datum: {{toDate(game.start_time)}}</li>
+		<li class="right-arrow" ng-click="showScore(game.id)"><img src="img/right-arrow.png"/></li>
+	</ul>
+</section>

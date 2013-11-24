@@ -1,27 +1,28 @@
+<section class="addscore">
+	<h1>Score verloop</h1>
 
-<h1>Score verloop</h1>
-
-<h1 class="match_title">{{scores[0].team_1.name}} vs {{scores[0].team_2.name}}</h1>
+	<h1 class="match_title">{{scores[0].team_1.name}} vs {{scores[0].team_2.name}}</h1>
 
 	<div>
-			{{scores[0].team_1.name}} <input ng-model="team1score" type="number" required>
-		</div>
+		{{scores[0].team_1.name}} <input ng-model="team1score" type="number" required>
+	</div>
 
-		<div>
-			{{scores[0].team_2.name}} <input ng-model="team2score" type="number" required>
-		</div>
+	<div>
+		{{scores[0].team_2.name}} <input ng-model="team2score" type="number" required>
+	</div>
 
-		<div>
-			Laatste Score? <input type="checkbox" ng-model="isfinal" id="isfinal">
-		</div>
+	<div>
+		Laatste Score? <input type="checkbox" ng-model="isfinal" id="isfinal">
+	</div>
 
-		<div>
-			<button ng-click="submitScore()">Submit Score</button>
-		</div>
-			
-<nav>
-	<ul>
-		<li><a href="#/addscore/{{matchID}}">score toevoegen</a></li>
-		<li><a href="">score aanpassen</a></li>
-	</ul>
-</nav>
+	<div>
+		<button ng-click="submitScore()">Submit Score</button>
+	</div>
+				
+	<nav>
+		<ul>
+			<li><a href="#/addscore/{{matchID}}">score toevoegen</a></li>
+			<li><a href="">score aanpassen</a></li>
+		</ul>
+	</nav>
+</section>

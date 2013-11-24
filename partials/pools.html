@@ -1,28 +1,40 @@
-<section ng-repeat="pool in pools | orderBy:'id':false">
-	<h1>Pool {{pool.name}}</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>Naam</th>
-				<th>Gespeeld</th>
-				<th>Winst</th>
-				<th>Verlies</th>
-				<th>Voor</th>
-				<th>Tegen</th>
-				<th>Gemiddeld</th>
+<div class="refresh">
+    <span ng-click="refreshData()">Klik voor verversen...</span>
+</div>
+<section id="top">
+	<section hm-dragleft="showSchedule()" class="pools" ng-repeat="pool in pools | orderBy:'id':false" >
+		<h1>POULE {{pool.name}}</h1>
+		<table>
+			<colgroup>
+		        <col class="name">
+		        <col class="column">
+		        <col class="column">
+		        <col class="column">
+		        <col class="column">
+		        <col class="column">
+		        <col class="column">
+	    	</colgroup>
+			<thead ng-class="portraitVar">
+				<tr>
+					<th>Team</th>
+					<th>Ge.</th>
+					<th>Wi.</th>
+					<th>Ve.</th>
+					<th>Vo.</th>
+					<th>Te.</th>
+					<th>+/-</th>
+				</tr>
+			</thead>	
+			<tr ng-repeat="standing in pool.standings | orderBy:['-wins','-plus_minus']">
+				<td ng-click="showTeam(standing.team_id)">{{standing.team.name}}</td>
+				<td ng-class="portraitVar">{{standing.games_played}}</td>
+				<td ng-class="portraitVar">{{standing.wins}}</td>
+				<td ng-class="portraitVar">{{standing.losses}}</td>
+			    <td ng-class="portraitVar">{{standing.points_scored}}</td>
+				<td ng-class="portraitVar">{{standing.points_allowed}}</td>
+				<td ng-class="portraitVar">{{standing.plus_minus}}</td> 
 			</tr>
-		</thead>	
-		<tr ng-repeat="standing in pool.standings | orderBy:['-wins','-plus_minus']">
-			<td ng-click="showTeam(standing.team_id)">{{standing.team.name}}</td>
-			<td>{{standing.games_played}}</td>
-			<td>{{standing.wins}}</td>
-			<td>{{standing.losses}}</td>
-			<td>{{standing.points_scored}}</td>
-			<td>{{standing.points_allowed}}</td>
-			<td>{{standing.plus_minus}}</td>
-		</tr>
-	</table>
+		</table>
+	</section>
 </section>
-
-
 
